@@ -133,5 +133,5 @@ Perfect for anyone who wants to build neural networks from scratch and grasp the
 ## Author
 
 Your Name
-GitHub: https://github.com/yourusername
+GitHub: https://github.com/mugiwaraluffy56
 Contributions and feedback are welcome!
