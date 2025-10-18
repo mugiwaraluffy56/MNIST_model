@@ -101,3 +101,19 @@ class NeuralNetwork:
         y_pred = self.forward_pass(X)
         preds = np.argmax(y_pred, axis=0)
         return np.mean(preds == y)
+
+
+nn = NeuralNetwork([784, 128, 128, 64, 10])
+
+train_data = pd.read_csv(r"mnist_train.csv")
+test_data = pd.read_csv(r"mnist_test.csv")
+
+x_train = train_data.drop("label", axis=1).to_numpy() / 255.0
+y_train = train_data["label"].to_numpy()
+
+x_test = test_data.drop("label", axis=1).to_numpy() / 255.0
+y_test = test_data["label"].to_numpy()
+
+nn.train(x_train, y_train, epochs=50, batch_size=32, lr=0.01)
+nn.accuracy(x_test, y_test)
+
